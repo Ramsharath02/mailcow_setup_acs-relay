@@ -1,0 +1,18 @@
+version: '2.1'
+
+services:
+  acs-relay:
+    container_name: acs-relay
+    build: ./acs-relay
+    restart: always
+    networks:
+      - mailcow-network
+    ports:
+      - "2525:2525"
+    # Add other necessary configs here
+
+networks:
+  mailcow-network:
+    external: true
+    name: mailcowdockerized_mailcow-network
+
